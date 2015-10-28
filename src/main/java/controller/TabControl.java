@@ -2,16 +2,19 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
-import java.awt.*;
 import java.io.IOException;
 
 /**
  * Created by Titusz Ozsváth on 2015-10-28.
  */
 public class TabControl extends AnchorPane {
-    @FXML private TextField textField;
+
+    public Button btn;
+    public Label label;
 
     public TabControl(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/tab.fxml"));
@@ -24,9 +27,16 @@ public class TabControl extends AnchorPane {
             throw new RuntimeException(exception);
         }
     }
+    protected Button getButton(){
+        return btn;
+    }
+
+    protected void setLabelText(String str){
+        label.setText(str);
+    }
 
     @FXML
-    protected void doSomething() {
-        System.out.println("The button was clicked!");
+    protected void tabOnAction() {
+        btn.setText("admkasdlmasxalskd");
     }
 }

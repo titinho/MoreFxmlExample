@@ -33,6 +33,8 @@
 package controller;
 
 import javafx.beans.property.StringProperty;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
@@ -48,7 +50,8 @@ import java.io.IOException;
 public class CustomControl extends VBox {
     @FXML private TabPane tabPane;
     @FXML private TextField textField;
-    @FXML private TabControl tabControl;
+    @FXML private TabControl tabControl1;
+    @FXML private TabControl tabControl2;
 
 
     public CustomControl() {
@@ -62,12 +65,37 @@ public class CustomControl extends VBox {
             throw new RuntimeException(exception);
         }
 
-        tabControl = new TabControl();
-        Tab tab = new Tab();
-        tab.setContent(tabControl);
-        tab.setText("TABBBBBB");
+        tabControl1 = new TabControl();
+        tabControl2 = new TabControl();
 
-        tabPane.getTabs().add(tab);
+        Tab tab1 = new Tab();
+        Tab tab2 = new Tab();
+
+        tab1.setContent(tabControl1);
+        tab1.setText("TABBBBBB");
+
+        tab2.setContent(tabControl2);
+        tab2.setText("TABBBBBB22222");
+
+        tabPane.getTabs().add(tab1);
+        tabPane.getTabs().add(tab2);
+
+        tabControl1.getButton().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Ez igaz?");
+                doSomething();
+                tabControl2.tabOnAction();
+                tabControl2.setLabelText("Ez label szöveg!");
+            }
+        });
+
+        /*tabControl1.getTextField().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                doSomething();
+            }
+        });*/
 
     }
     
@@ -86,5 +114,7 @@ public class CustomControl extends VBox {
     @FXML
     protected void doSomething() {
         System.out.println("The button was clicked!");
+        //TextField tf = tabControl1.getTextField();
+        //tf.setText("asd");
     }
 }
