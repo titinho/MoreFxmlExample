@@ -3,5 +3,8 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pom.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/controller/CustomControl.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/controller/CustomControlExample.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/custom_control.fxml" charset="windows-1252" />
   </component>
 </project>
