@@ -43,6 +43,11 @@ public class CustomControlExample extends Application {
         customControl.setText("Hello!");
         
         stage.setScene(new Scene(customControl));
+
+        /*TabControl tabControl = new TabControl();
+
+        stage.setScene(new Scene(tabControl));*/
+
         stage.setTitle("Custom Control");
         stage.setWidth(300);
         stage.setHeight(200);

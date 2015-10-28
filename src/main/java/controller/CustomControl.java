@@ -35,6 +35,8 @@ package controller;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
@@ -44,7 +46,10 @@ import java.io.IOException;
  * Sample custom control hosting a text field and a button.
  */
 public class CustomControl extends VBox {
+    @FXML private TabPane tabPane;
     @FXML private TextField textField;
+    @FXML private TabControl tabControl;
+
 
     public CustomControl() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/custom_control.fxml"));
@@ -56,6 +61,14 @@ public class CustomControl extends VBox {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
+        tabControl = new TabControl();
+        Tab tab = new Tab();
+        tab.setContent(tabControl);
+        tab.setText("TABBBBBB");
+
+        tabPane.getTabs().add(tab);
+
     }
     
     public String getText() {
